@@ -1,0 +1,4 @@
+To run this chat application program, you must first run server.java and pin the console.
+
+After you run the server, open up any more number of consoles, run Client.java in each and pin after running.  After following the prompts, the clients will
+be connected to the server and will be communicating with each other when you type a message and press enter.

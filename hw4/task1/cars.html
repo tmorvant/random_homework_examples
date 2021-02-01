@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Homework 4</title>
+
+</head>
+
+<body>
+  
+	<!-- #TODO Table goes here -->
+	<div ng-app="myApp" ng-controller="carsCtrl">
+	<table>
+		<tr>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th><button ng-click="orderByMe('year')"><b>Year</b></button></th>
+			<th>Stock</th>
+			<th>Price</th>
+			<th>Option</th>
+		</tr>
+		<tr ng-repeat = "x in cars | orderBy:myOrderBy | filter:search.manufacturer">
+			<td>{{ x.manufacturer }}</td>
+			<td>{{ x.model }}</td>
+			<td>{{ x.year }}</td>
+			<td>{{ x.stock }}</td>
+			<td>{{ x.price | currency }}</td>
+			<td><button ng-click=increment(x)>Increment</button></td>
+		</tr>
+	</table>
+	
+	Search By 
+	<select  ng-model="search.manufacturer">
+		<option value=''>All</option>
+		<option>Toyota</option>
+		<option>BMW</option>
+		<option>Chevy</option>
+		<option>Honda</option>
+		<option>Hyundai</option>
+		<option>Dodge</option>
+		<option>Ford</option>
+	</select>
+	</div>	
+
+	</table>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="cars.js"></script>
+  <script>
+  	//Your script goes here
+	angular.module('myApp', []).controller('carsCtrl', function($scope) {
+		$scope.cars = cars;
+		var order = 0;
+		$scope.orderByMe = function(x) {
+			//$scope.myOrderBy = 'year';
+			if (order == 0) {
+				$scope.myOrderBy = '-year';	
+				order = 1;
+			}
+			else {
+				$scope.myOrderBy = 'year';
+				order = 0;
+			}
+			
+		}
+		$scope.increment = function(x) {
+			x.stock += 1;
+		}
+	});
+	
+	
+  </script>
+</body>
+</html>

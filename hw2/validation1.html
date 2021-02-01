@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<script src = "./validation1.js"></script>
+<title>
+		Validation Form
+</title>
+</head>
+
+<body>
+<h1>
+Validation Form
+</h1>
+<form id="validationform" action="" >
+    <fieldset>
+      <legend>Personal Info</legend>
+      <p id="FirstName">
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" type="text" />
+      </p>
+	  <p id="LastName">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="lastName" type="text" />
+      </p>
+	  
+	  <p id = "Gender">Gender
+	  <select id="GenderList">
+		<option id="blank">Select Gender</option>
+		<option id="male">Male</option>
+		<option id="female">Female<option>
+	  </select>
+	  </p>
+	  <br>
+	  <br>
+	  <p id = "State">State
+	  <select id="StateList">
+		<option id="blank">Select State</option>
+		<option id="california">California</option>
+		<option id="florida">Florida</option>
+		<option id="newyork">New York</option>
+		<option id="texas">Texas</option>
+		<option id="hawaii">Hawaii</option>
+		<option id="washington">Washington</option>
+		<option id="colorado">Colorado</option>
+		<option id="virginia">Virginia</option>
+		<option id="iowa">Iowa</option>
+		<option id="arizona">Arizona</option>
+	  </select>
+	  </p>
+	  <br>
+        <input onCLick="validate1()" type="button" id="continue" name="continue" value="Continue"/>
+    </fieldset>
+  </form>
+  
+  <p id="demo"></p>
+
+</body>
+
+</html>
